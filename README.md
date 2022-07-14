@@ -11,6 +11,13 @@
     * [3.2 Future Updates](#32-future-updates)
 * [4 Structure](#4-structure)
     * [4.1 Initial Page Structure](#41-initial-page-structure)
+* [5 Skelaton](#5-skeleton)
+    * [5.1 Wireframes](#51-wireframes)
+    * [5.2 The Home Page](#52-the-home-page)
+    * [5.3 The Library Page](#53-the-library-page)
+    * [5.4 The Sign-up Page](#54-the-sign-up-page)
+    * [5.5 The Login Page](#55-the-login-page)
+    * [5.6 The Users Profile Page](#56-the-users-profile-page)
 
 
 # 1 Ux design
@@ -86,13 +93,19 @@ The following list of objectives it designed to achieve a well-balanced website 
 -	A scrolling library page with book images, information, and comment section
 -	A welcome homepage 
 
+[Back to top](#contents)
+
 ## 3.2 Future Updates
 
 ?? to be added 
 
+[Back to top](#contents)
+
 # 4 Structure
 
 The feature acknowledged from the scope plane will be implemented into the structure of the website.
+
+[Back to top](#contents)
 
 ## 4.1 Initial Page Structure
 
@@ -107,3 +120,90 @@ The feature acknowledged from the scope plane will be implemented into the struc
 -	The login link with an email and password fields to access pre-registers users profile page
 -	A profile page with a tally chart of comments the user has added and books the user has added to the library
 -	The sign up page with input fields for creating a user’s account. 
+
+[Back to top](#contents)
+
+# 5 Skeleton
+
+## 5.1 Wireframes 
+
+The wireframes for the website were created using Balsamiq Wireframes. Using the structure plane the following mock-ups were generated.
+
+[Back to top](#contents)
+
+## 5.2 The Home Page
+
+The opening page has a description about the site, its goals, and its available functionality.   There will also be a link to the sign-up page to encourage and enhance usability. 
+
+![home-page-mod](assets/images-readme/mob_welcome_wire.png)\
+*compressed from 43.6 KB to 12.8 KB via [TinyPNG](https://tinypng.com/)*
+
+![home-page-tablet](assets/images-readme/tablet_welcome_wire.png)\
+*compressed from 42.8 KB to 14.8 KB via [TinyPNG](https://tinypng.com/)*
+
+![home-page-desk](assets/images-readme/desk_welcome_wire.png)\
+*compressed from 44.9 KB to 14.4 KB via [TinyPNG](https://tinypng.com/)*
+
+[Back to top](#contents)
+
+## 5.3 The Library Page
+
+The library page consists of list of book titles, an image of the book and the information associated. Underneath the data there is a comment box enable users to add their views on the books and engage in conversations with other users. The books will be on a continual scroll however the more the data increase a later update for placing the data on multiple pages for easier viewing.
+
+![library-page-mod](assets/images-readme/mob_books_wire.png)\
+*compressed from 42.2 KB to 12.5 KB via [TinyPNG](https://tinypng.com/)*
+
+![library-page-tablet](assets/images-readme/tablet_books_wire.png)\
+*compressed from 52.4 KB to 17.6 KB via [TinyPNG](https://tinypng.com/)*
+
+![library-page-desk](assets/images-readme/desk_books_wire.png)\
+*compressed from 44.9 KB to 14.4 KB via [TinyPNG](https://tinypng.com/)*
+
+[Back to top](#contents)
+
+## 5.4 The Sign-up Page
+
+To register for an account an input form for personal information is provided. The user can access this with a link via the navbar and the home page. This will be a input form.
+
+![sign-up-page-mod](assets/images-readme/mob_signup_wire.png)\
+*compressed from 40.7 KB to 11.1 KB via [TinyPNG](https://tinypng.com/)*
+
+![sign-up-page-tablet](assets/images-readme/tablet_signup_wire.png)\
+*compressed from 41.4 KB to 13.5 KB via [TinyPNG](https://tinypng.com/)*
+
+![sign-up-page-desk](assets/images-readme/desk_signup_wire.png)\
+*compressed from 47.6 KB to 15.6 KB via [TinyPNG](https://tinypng.com/)*
+
+[Back to top](#contents)
+
+## 5.5 The Login Page
+
+The format for this is like the sign-up page for familiarity. The user will use their email address and their password to access their personal account.
+
+![login-page-mod](assets/images-readme/mob_login_wire.png)\
+*compressed from 40.7 KB to 11.6 KB via [TinyPNG](https://tinypng.com/)*
+
+![login-page-tablet](assets/images-readme/tablet_login_wire.png)\
+*compressed from 41.9 KB to 13.9 KB via [TinyPNG](https://tinypng.com/)*
+
+![login-page-desk](assets/images-readme/desk_login_wire.png)\
+*compressed from 47.4 KB to 16.1 KB via [TinyPNG](https://tinypng.com/)*
+
+[Back to top](#contents)
+
+## 5.6 The Users Profile Page
+
+The profile page will have the name an image and a tally of comments the user has made and books the user has uploaded to the library.
+
+![user-page-mod](assets/images-readme/mob_user_wire.png)\
+*compressed from 26.9 KB to 6.9 KB via [TinyPNG](https://tinypng.com/)*
+
+![user-page-tablet](assets/images-readme/tablet_user_wire.png)\
+*compressed from 28.5 KB to 8.3 KB via [TinyPNG](https://tinypng.com/)*
+
+![user-page-desk](assets/images-readme/desk_user_wire.png)\
+*compressed from 40.0 KB to 11.5 KB via [TinyPNG](https://tinypng.com/)*
+
+[Back to top](#contents)
+
+
