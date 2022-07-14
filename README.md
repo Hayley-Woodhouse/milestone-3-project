@@ -1,108 +1,67 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome USER_NAME,
+# Contents
+* [1 UX Design](#1-ux-design)
+    * [1.1 User Stories](#11-user-stories)
+* [2 Strategy](#2-strategy)
+    * [2.1 Developers Project](#21-developers-project)
+    * [2.2 Business](#22-business)
+    * [2.3 Users](#23-users)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+# 1 Ux design
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## 1.1 User Stories
 
-## Gitpod Reminders
+### Consumer user stories
+S
+As a user I want to..
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+1.    Have a clear and straightforward view of the selection of the books, the books information and synopsis and other users comments. 
+2.	Manage a personal account allowing me to add, edit and remove content.
+3.	View my contributions view my personal account
+4.	Navigate the site with easy on all formats.
 
-`python3 -m http.server`
+[Back to top](#contents)
 
-A blue button should appear to click: _Make Public_,
+### Business user stories
 
-Another blue button should appear to click: _Open Browser_.
+As a business I want to..
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+1.	To have a clear interactive layout
+2.	Have access to multiple social media links
+3.	Have simple colour scheme, representative of the books cover art.
+4.	Have the site accessible across all devices. 
+5.	Have a admin process to monitor behaviour and manage content.
 
-A blue button should appear to click: _Make Public_,
+[Back to top](#contents)
 
-Another blue button should appear to click: _Open Browser_.
+### Developers’ user stories
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+As a web developer I want to..
 
-To log into the Heroku toolbelt CLI:
+1.	provide an easily manageable interactive user experience
+2.	have a site that is compliant with W3C guidelines and PEP8 in python
+3.	provide well commented code for future updates
+4.	have concise use of relational and non-relational databases
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+[Back to top](#contents)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+# 2 Strategy
 
-------
+## 2.1 Developers Project
 
-## Release History
+The aim for this project is to produce a fan site for David Walliams books. Users will be able to register an account for. From there the user can add their own personal comments on the library of books, edit and delete comments and upload new/ additional books to the site. With a simple and readable format, the site will be easy to navigate.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+[Back to top](#contents)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## 2.2 Business
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+To provide a great social media experience enabling users to interact and share comments on their favourite David Walliams books. Giving the users the ability to add content to page managed by an admin account.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+[Back to top](#contents)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## 2.3 Users
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+The aim is to give users a simple and clear user platform to engage in discussions and review the books available. The user can manage their comments with add, edit, and delete options and add new material to the book library page that it added when the administrator of the page enables the new listing.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+[Back to top](#contents)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
