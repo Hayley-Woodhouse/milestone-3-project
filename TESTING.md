@@ -40,5 +40,6 @@ The html and css pages were validated using [W3S](https://validator.w3.org/)
 
 | Test number | Description | Expectation | Outcome | Pass/Fail | Comments |
 | --- | --- | --- | --- | --- | --- |
+| 1 | check for flask instulations | print message to screen | pass | outcome as expected |
 
 # 7 Updates
