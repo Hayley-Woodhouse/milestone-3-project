@@ -18,6 +18,11 @@
     * [5.4 The Sign-up Page](#54-the-sign-up-page)
     * [5.5 The Login Page](#55-the-login-page)
     * [5.6 The Users Profile Page](#56-the-users-profile-page)
+* [6 Surface](#6-surface)
+    * [6.1 Visual Design](#61-visual-design)
+    * [6.2 Colours](#62-colours)
+    * [6.3 Typography](#63-typography)
+    * [6.4 Images](#64-images)
 
 
 # 1 Ux design
@@ -25,7 +30,7 @@
 ## 1.1 User Stories
 
 ### Consumer user stories
-S
+
 As a user I want to..
 
 1.    Have a clear and straightforward view of the selection of the books, the books information and synopsis and other users comments. 
@@ -205,5 +210,49 @@ The profile page will have the name an image and a tally of comments the user ha
 *compressed from 40.0 KB to 11.5 KB via [TinyPNG](https://tinypng.com/)*
 
 [Back to top](#contents)
+
+# 6 Surface
+
+## 6.1 Visual Design 
+
+The visual design for the website covers the colours, fonts, effects, and images.
+
+[Back to top](#contents)
+
+## 6.2 Colours
+
+The colours selected for the website where generated from [coolors.com](https://coolors.co/palette/577590-f3ca40-f2a541-f08a4b-d78a76). The colour are set using HEX placement values.
+
+![Palette image of generated colours](assets/images-readme/color_palette_wire.png)\
+*compressed from 28.6 KB to 8.3 KB via [TinyPNG](https://tinypng.com/)*
+
+[Back to top](#contents)
+
+## 6.3 Typography
+
+The font type used throughout the website is as follows.
+
+Heading and Titles
+Caveat regular 400, medium 500, semi-bold 600, bold 700
+
+Paragraphs 
+
+Work sans thin 100, extra light 200, light 300, regular 400.
+
+![typography from google fonts](assets/images-readme/googlefonts_wire.png)\
+*compressed from 86.6 KB to 26.0 KB via [TinyPNG](https://tinypng.com/)*
+
+[Back to top](#contents)
+
+## 6.4 Images
+
+[Back to top](#contents)
+
+## Testing
+
+Click the [link](TESTING.md) for testing.
+
+[Back to top](#contents)
+
 
 
