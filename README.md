@@ -226,6 +226,23 @@ The colours selected for the website where generated from [coolors.com](https://
 ![Palette image of generated colours](assets/images-readme/color_palette_wire.png)\
 *compressed from 28.6 KB to 8.3 KB via [TinyPNG](https://tinypng.com/)*
 
+When using the [materialize](https://materializecss.com/) design services the colour generated are not directly hex place accurate to the above sample. However the [coolors.com](https://coolors.co/palette/577590-f3ca40-f2a541-f08a4b-d78a76) website provides a good blue print for colour selection. To regenerate the style above the following colour are to be impemented within the website using [materialize](https://materializecss.com/color.html) availibility. 
+
+![materialize blue colour](assets/images-readme/blue_colour_wire.png)\
+*compressed from 4.3 KB to 977 B via [TinyPNG](https://tinypng.com/)*
+
+![materialize dark orange colour](assets/images-readme/dorange_colour_wire.png)\
+*compressed from 4.3 KB to 968 B via [TinyPNG](https://tinypng.com/)*
+
+![materialize orange colour](assets/images-readme/orange_colour_wire.png)\
+*compressed from 4.2 KB to 968 B via [TinyPNG](https://tinypng.com/)*
+
+![materialize yellow colour](assets/images-readme/yellow_colour_wire.png)\
+*compressed from 3.9 KB to 968 B via [TinyPNG](https://tinypng.com/)*
+
+![materialize stone colour](assets/images-readme/stone_colour_wire.png)\
+*compressed from 4.6 KB to 1.1 KB via [TinyPNG](https://tinypng.com/)*
+
 [Back to top](#contents)
 
 ## 6.3 Typography
@@ -244,15 +261,57 @@ Work sans thin 100, extra light 200, light 300, regular 400.
 
 [Back to top](#contents)
 
+<!---update
 ## 6.4 Images
 
 [Back to top](#contents)
 
-## Testing
+# 7 Testing
 
 Click the [link](TESTING.md) for testing.
 
 [Back to top](#contents)
 
+# 8 Deployment
+
+ # 9 Technologies used
+- [HTML 5](https://en.wikipedia.org/wiki/HTML5) 
+- [CSS](https://en.wikipedia.org/wiki/CSS)
+- [JS](https://en.wikipedia.org/wiki/JavaScript)
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+- [Balsamiq](https://balsamiq.com/wireframes/desktop/#)
+- [gitpod](https://www.gitpod.io/)
+- [github](https://github.com/Hayley-Woodhouse/Milestone-3-project)
+- [W3 Schools](https://www.w3schools.com/)
+- [Heroku](https://www.heroku.com/)
+- [Mongodb](https://www.mongodb.com/)
+- [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework))
+
+
+# 10 Credits
+
+- [materialize](https://materializecss.com/)
+- [Font awesome](https://fontawesome.com/) was used for all icons.
+- [Google fonts](https://fonts.google.com/) was used for the fonts within the website.
+- [Favicon](https://favicon.io/emoji-favicons/books) was used for the favicon image.
+- [W3S](https://validator.w3.org/) was used to validate the html and css files.
+
+[Back to top](#contents)
+
+# 11 Acknowledgements
+
+This web site was created for the second milestone project for the full stack development diploma with the code instatute and harlow college.
+
+With thanks to 
+
+Precious Ljege for the mentor assistants, advice and support.
+
+Philip Morris for the tuition and guidence.
+
+Richard and Isla Woodhouse for support and user testing.
+
+[Back to top](#contents)
+
+--->
 
 
