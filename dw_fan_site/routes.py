@@ -5,4 +5,4 @@ from dw_fan_site.models import Books, Details
 
 @app.route("/")
 def home():
-    return render_template("base.html")
+    return render_template("newbook.html")
