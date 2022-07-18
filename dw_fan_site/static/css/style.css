@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Work+Sans:wght@100;200;300;400&display=swap');
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: 'Work Sans', sans-serif;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  .footer-copyright, a {
+    padding-left: 5px;
+  }
+
+  .brand-logo {
+    font-family: 'Caveat', cursive;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
