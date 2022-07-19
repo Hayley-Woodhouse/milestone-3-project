@@ -40,10 +40,10 @@ The html and css pages were validated using [W3S](https://validator.w3.org/)
 
 | Test number | Description | Expectation | Outcome | Pass/Fail | Comments |
 | --- | --- | --- | --- | --- | --- |
-| 1 | check for flask instulations | print message to screen | pass | 
-outcome as expected |
-| 2 | submit button to add_book.html | to push input text to database | submit button void| fail | 
-outcome as expected |
+| 1 | check for flask instulations | print message to screen | outcome as expected | pass | 
+| 2 | submit button within add_book.html not working | to push input text to database | submit button does not render properly | fail | 
+| 3 | submit button within add_book.html | to push input text to database | submit button workin | pass | A layout issue with the html form page |
+
 
 
 # 7 Updates
