@@ -16,9 +16,17 @@ def books():
 
 @app.route("/add_book", methods=["GET", "POST"])
 def add_book():
+    books = list(Books.query.order_by(Books.book_name).all())
     if request.method == "POST":
-        a_books = Books(book_name=request.form.get("book_name"))
-        db.session.add(books)
+        book = Books(
+            book_name=request.form.get("book_name"),
+            author_name=request.form.get("author_name"),
+            illustrator_name=request.form.get("illustrator_name"),
+            publication_date=request.form.get("publication_date"),
+            synopsis_info=request.form.get("synopsis_info"),
+            # books_id=request.form.get("books_id")
+        )
+        db.session.add(book)
         db.session.commit()
         return redirect(url_for("books"))
-    return render_template("add_book.html") 
+    return render_template("add_book.html", books=books)
