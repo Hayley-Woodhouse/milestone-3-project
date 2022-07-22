@@ -31,6 +31,14 @@ def add_book():
         return redirect(url_for("books"))
     return render_template("add_book.html", books=books)
 
+@app.route("/sign_up")  
+def sign_up():
+    return render_template("sign_up.html") 
+
+@app.route("/login")  
+def login():
+    return render_template("login.html")
+
 
 @app.route("/edit_book/<int:book_id>", methods=["GET", "POST"])
 def edit_book(book_id):
