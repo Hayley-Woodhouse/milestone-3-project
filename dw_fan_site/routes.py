@@ -64,40 +64,36 @@ def sign_up():
             return redirect("login")
     return render_template("sign_up.html")
 
-
-
-    # if existing_user:
-    #     flash("This user already exists")
-    #     return redirect(url_for("sign_up"))
-
-    # return render_template("sign_up.html") 
-
-
-# @app.route("/register", methods=["GET", "POST"])
-# def register():
-#     if request.method == "POST":
-        # check if username already exists in db
-        # existing_user = mongo.db.users.find_one(
-        #     {"username": request.form.get("username").lower()})
-
-        # if existing_user:
-        #     flash("Username already exists")
-        #     return redirect(url_for("register"))
-
-        # register = {
-        #     "username": request.form.get("username").lower(),
-        #     "password": generate_password_hash(request.form.get("password"))
-        # }
-        # mongo.db.users.insert_one(register)
-
-        # put the new user into 'session' cookie
-    #     session["user"] = request.form.get("username").lower()
-    #     flash("Registration Successful!")
-    # return render_template("register.html")
-
-@app.route("/login")  
+@app.route("/login", methods=["GET", "POST"])  
 def login():
+    if request.method == "POST":
+        email_user=request.form.get("email_user")
+        password1=request.form.get("password_user")
+        
+        personObject = Users.query.filter_by(email_user=email_user).first()
+
+        if personObject:
+           # make sure hashed password matches users input 
+            print("got email")
+           
+            if check_password_hash(personObject.password_user, password1):
+                return redirect(url_for("profile", usernameIn=personObject.f_name))
+            else:
+                # invalid password
+                flash("Incorrect Username and/or Password")
+        else:
+            # invalid User(email)
+            flash("Incorrect Username and/or Password")
+    
     return render_template("login.html")
+
+@app.route("/profile/<usernameIn>" ,methods=["GET", "POST"])
+def profile(usernameIn):
+    
+    return render_template("profile.html" ,usernameIn=usernameIn)
+
+
+
 
 
 @app.route("/edit_book/<int:book_id>", methods=["GET", "POST"])
