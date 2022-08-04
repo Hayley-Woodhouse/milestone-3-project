@@ -1,6 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="black-text center-align">Home</h3>
+<h2 class="black-text center-align">About Us</h3>
+
+<div class="row">
+    <div class="col s12 m6 center-align">
+        <div class="card">
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='images/david_walliams.jpg') }}" alt="Image of David Walliams">
+            </div>
+            <div class="card-content">
+              <p>David Walliams with a copy of Gangsta Granny.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m6">
+        <div class="card deep-orange lighten-3">
+            <div class="card-content black-text center-align">
+                <span class="card-title"><strong>Welcome to the David Walliams Fan Site.</strong></span>
+                <br>
+                <p>The David Walliams Fan Site was setup for likeminded individuals that enjoy the best-selling literacy collection by the best-selling author.</p>
+                <br>
+                <p>Head to the sign-up page and create your own profile page. Add your favourite books, comments and enjoy interacting and discussing the stories with other users.</p>
+                <br>
+                <p>The library page has many of the popular books available for you to review and look for recommendations.</p>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
