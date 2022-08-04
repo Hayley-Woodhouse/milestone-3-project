@@ -23,6 +23,8 @@
     * [6.2 Colours](#62-colours)
     * [6.3 Typography](#63-typography)
     * [6.4 Images](#64-images)
+* [7 Database](#7-database)
+    * [7.1 Tables](#71-tables)
 
 
 # 1 Ux design
@@ -261,8 +263,54 @@ Work sans thin 100, extra light 200, light 300, regular 400.
 
 [Back to top](#contents)
 
-<!---update
 ## 6.4 Images
+
+Home page image downloaded form [swindon advertiser](https://www.swindonadvertiser.co.uk/news/16103604.comedian-david-walliams-talks-book-gangsta-granny/#gallery0)
+
+![home page image](dw_fan_site/static/images/david_walliams.jpg)
+
+[Back to top](#contents)
+
+<!-- update -->
+# 7 Database 
+
+postgres was installed locallt to create a database and SQLAlcemy was installed to work with python to add data to tables and query the database.
+
+The database name dw_fan_site
+
+[Back to top](#contents)
+
+## 7.1 Tables
+
+### Books 
+
+The model.py schema 
+![books model image](assets/images-readme/books_model_readme.png)
+
+Adding books to the database - routes.py
+![add books routes image](assets/images-readme/add_book_db.png)
+
+Editing books in the database - routes.py
+![edit books routes image](assets/images-readme/edit_book_db.png)
+
+Deleting books from the database - routes.py
+![delete books routes image](assets/images-readme/delete_book_db.png)
+
+[Back to top](#contents)
+
+### Users
+
+The model.py schema
+![users model image](assets/images-readme/users_model_readme.png)
+
+Sign-up new users - routes.py
+![sign up users routes image](assets/images-readme/singup_users_db.png)
+
+Login - routes.py
+![login routes image](assets/images-readme/login_users_db.png)
+
+<!---update
+
 
 [Back to top](#contents)
 
