@@ -1,7 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2 class="black-text center-align">About Us</h3>
+<div class="row">
+    <div class="col s12">
+        <div class="card amber lighten-2">
+            <div class="card-content black-text center-align">
+                <h3>Welcome to the David Walliams Fan Site</h3>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="row">
     <div class="col s12 m6 center-align">
@@ -17,13 +25,22 @@
     <div class="col s12 m6">
         <div class="card deep-orange lighten-3">
             <div class="card-content black-text center-align">
-                <span class="card-title"><strong>Welcome to the David Walliams Fan Site.</strong></span>
+                <span class="card-title"><strong>About us</strong></span>
                 <br>
-                <p>The David Walliams Fan Site was setup for likeminded individuals that enjoy the best-selling literacy collection by the best-selling author.</p>
+                <p>The David Walliams Fan Site was setup for likeminded individuals that enjoy the best-selling literacy collection by the author, actor, comedian and television personality.</p>
                 <br>
-                <p>Head to the sign-up page and create your own profile page. Add your favourite books, comments and enjoy interacting and discussing the stories with other users.</p>
+                <p>Head to the<a class="blue-text text-darken-4" href="{{ url_for('sign_up') }}">sign_up</a> page and create your own profile page. Add your favourite books, comments and enjoy interacting and discussing the stories with other users.</p>
                 <br>
-                <p>The library page has many of the popular books available for you to review and look for recommendations.</p>
+                <p>The<a class="blue-text text-darken-4" href="{{ url_for('books') }}">library</a> page has many of the popular books available for you to review and look for recommendations.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12">
+        <div class="card amber lighten-2">
+            <div class="card-content black-text center-align">
+                <p>For uptodate information on new releases and adding to your collection of David Walliams books then head to the<a class="blue-text text-darken-4" href="https://www.worldofdavidwalliams.com/books/">offical World of David Walliam</a> website</p>
             </div>
         </div>
     </div>
