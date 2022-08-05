@@ -1,7 +1,12 @@
-from flask import flash, render_template, request, redirect, url_for
+from flask import flash, render_template, request, session, redirect, url_for
 from dw_fan_site import app, db
 from dw_fan_site.models import Books, Users
 from werkzeug.security import generate_password_hash, check_password_hash
+
+
+# You have to set the secret key for sessions to work
+# Make sure you keep this secret
+app.secret_key = 'hayleywoodhouse' 
 
 
 # route to render the home page
@@ -81,8 +86,8 @@ def login():
         if personObject:
             # make sure hashed password matches users input 
             if check_password_hash(personObject.password_user, password1):
-                return redirect(url_for("home"))
-                #return redirect(url_for("profile", usernameIn=personObject.f_name))
+                session["name"] = email_user
+                return redirect(url_for("profile", usernameIn=personObject.f_name))
             else:
                 # invalid password
                 flash("Incorrect Username and/or Password")
@@ -93,14 +98,21 @@ def login():
 
 
 # route to render the profile page
-# @app.route("/profile/<usernameIn>", methods=["GET", "POST"])
-# def profile(usernameIn):
+@app.route("/profile/<usernameIn>", methods=["GET", "POST"])
+def profile(usernameIn):
 
-#     usernameIn = Users.query.filter_by(db.session['users'])
+    if session.get("name"):
+        return render_template("profile.html", usernameIn=usernameIn)
+    return redirect(url_for("login"))
 
-#     if usernameInß:
-#         return render_template("profile.html", usernameIn=usernameIn)
-#     return redirect(url_for("login"))
+
+@app.route("/logout")
+def logout():
+    # remove user from session cookie
+    flash("You have been logged out")
+    session.pop("name")
+    return redirect(url_for("login"))
+    
 
 
 # route to render the edit_book page
