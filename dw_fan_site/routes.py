@@ -132,8 +132,11 @@ def login():
         if personObject:
             # make sure hashed password matches users input 
             if check_password_hash(personObject.password_user, password1):
-                session["name"] = email_user
-                return redirect(url_for("profile", usernameIn=personObject.f_name))
+                if email_user == "admin":
+                    return redirect(url_for("admin"))
+                else:
+                    session["name"] = email_user
+                    return redirect(url_for("profile", usernameIn=personObject.f_name))
             else:
                 # invalid password
                 flash("Incorrect Username and/or Password")
