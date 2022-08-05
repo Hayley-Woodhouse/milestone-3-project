@@ -4,21 +4,26 @@ from dw_fan_site.models import Books, Users
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
+# route to render the home page
 @app.route("/")
 def home():
     return render_template("home.html")
 
 
+# route to render the books/library page
 @app.route("/books")  
 def books():
+    # renders books from db on page
     books = list(Books.query.order_by(Books.book_name).all())
     return render_template("books.html", books=books) 
 
 
+# route to render the add_book page
 @app.route("/add_book", methods=["GET", "POST"])
 def add_book():
     books = list(Books.query.order_by(Books.book_name).all())
     if request.method == "POST":
+        # from form on add_book page these fields are filled in
         book = Books(
             book_name=request.form.get("book_name"),
             author_name=request.form.get("author_name"),
@@ -27,25 +32,25 @@ def add_book():
             synopsis_info=request.form.get("synopsis_info"),
             id=request.form.get("book_id")
         )
+        # pushed to the db
         db.session.add(book)
         db.session.commit()
         return redirect(url_for("books"))
     return render_template("add_book.html", books=books)
 
 
+# route to render the sign_page
 @app.route("/sign_up", methods=["GET", "POST"])  
 def sign_up():
     if request.method == "POST":
         email_user=request.form.get("email_user")
         password1=request.form.get("password_user")
         password2=request.form.get("password2")
-    
         # check if username already exists in db
         email = Users.query.filter_by(email_user=email_user).first()
         if email:
             flash("email already used!")
             return redirect(url_for("sign_up"))
-
         # check if passwords match
         elif password1 != password2:
             flash("passwords do no match!")
@@ -58,44 +63,47 @@ def sign_up():
                 password_user=generate_password_hash(password1, method='sha256'),
                 id=request.form.get("users_id")
                 )
+            # pushed to the db
             db.session.add(users)
             db.session.commit()
             flash("Sign-up was Successful!")
             return redirect("login")
     return render_template("sign_up.html")
 
+
+# route to render the login page
 @app.route("/login", methods=["GET", "POST"])  
 def login():
     if request.method == "POST":
         email_user=request.form.get("email_user")
         password1=request.form.get("password_user")
-        
         personObject = Users.query.filter_by(email_user=email_user).first()
-
         if personObject:
-           # make sure hashed password matches users input 
-            print("got email")
-           
+            # make sure hashed password matches users input 
             if check_password_hash(personObject.password_user, password1):
-                return redirect(url_for("profile", usernameIn=personObject.f_name))
+                return redirect(url_for("home"))
+                #return redirect(url_for("profile", usernameIn=personObject.f_name))
             else:
                 # invalid password
                 flash("Incorrect Username and/or Password")
         else:
             # invalid User(email)
             flash("Incorrect Username and/or Password")
-    
     return render_template("login.html")
 
-@app.route("/profile/<usernameIn>" ,methods=["GET", "POST"])
-def profile(usernameIn):
-    
-    return render_template("profile.html" ,usernameIn=usernameIn)
+
+# route to render the profile page
+# @app.route("/profile/<usernameIn>", methods=["GET", "POST"])
+# def profile(usernameIn):
+
+#     usernameIn = Users.query.filter_by(db.session['users'])
+
+#     if usernameInß:
+#         return render_template("profile.html", usernameIn=usernameIn)
+#     return redirect(url_for("login"))
 
 
-
-
-
+# route to render the edit_book page
 @app.route("/edit_book/<int:book_id>", methods=["GET", "POST"])
 def edit_book(book_id):
     book = Books.query.get_or_404(book_id)
@@ -111,6 +119,7 @@ def edit_book(book_id):
     return render_template("edit_book.html", book=book)
 
 
+# route to delete book from db
 @app.route("/delete_book/<int:book_id>")
 def delete_book(book_id):
     booked = Books.query.get_or_404(book_id)
