@@ -44,6 +44,52 @@ def add_book():
     return render_template("add_book.html", books=books)
 
 
+# route to render the edit_book page
+@app.route("/edit_book/<int:book_id>", methods=["GET", "POST"])
+def edit_book(book_id):
+    book = Books.query.get_or_404(book_id)
+    if request.method == "POST":
+        book.id = book_id
+        book.book_name = request.form.get("book_name"),
+        book.author_name = request.form.get("author_name"),
+        book.illustrator_name = request.form.get("illustrator_name"),
+        book.publication_date = request.form.get("publication_date"),
+        book.synopsis_info = request.form.get("synopsis_info"),
+        db.session.commit()
+        return redirect(url_for("books"))
+    return render_template("edit_book.html", book=book)
+
+
+# route to delete book from db
+@app.route("/delete_book/<int:book_id>")
+def delete_book(book_id):
+    booked = Books.query.get_or_404(book_id)
+    db.session.delete(booked)
+    db.session.commit()
+    return redirect(url_for("books"))
+
+# route to render the edit_user page
+@app.route("/edit_user/<int:user_id>", methods=["GET", "POST"])
+def edit_user(user_id):
+    user = Users.query.get_or_404(user_id)
+    if request.method == "POST":
+        user.id = user_id
+        user.f_name = request.form.get("f_name"),
+        user.l_name = request.form.get("l_name"),
+        user.email_user = request.form.get("email_user"),
+        db.session.commit()
+        return redirect(url_for("admin"))
+    return render_template("edit_user.html", user=user)
+
+# route to delete Users from db
+@app.route("/delete_user/<int:user_id>")
+def delete_user(user_id):
+    Used = User.query.get_or_404(user_id)
+    db.session.delete(booked)
+    db.session.commit()
+    return redirect(url_for("admin"))
+
+
 # route to render the sign_page
 @app.route("/sign_up", methods=["GET", "POST"])  
 def sign_up():
@@ -106,35 +152,17 @@ def profile(usernameIn):
     return redirect(url_for("login"))
 
 
+# route to logout of profile page
 @app.route("/logout")
 def logout():
     # remove user from session cookie
     flash("You have been logged out")
     session.pop("name")
     return redirect(url_for("login"))
-    
 
 
-# route to render the edit_book page
-@app.route("/edit_book/<int:book_id>", methods=["GET", "POST"])
-def edit_book(book_id):
-    book = Books.query.get_or_404(book_id)
-    if request.method == "POST":
-        book.id = book_id
-        book.book_name = request.form.get("book_name"),
-        book.author_name = request.form.get("author_name"),
-        book.illustrator_name = request.form.get("illustrator_name"),
-        book.publication_date = request.form.get("publication_date"),
-        book.synopsis_info = request.form.get("synopsis_info"),
-        db.session.commit()
-        return redirect(url_for("books"))
-    return render_template("edit_book.html", book=book)
-
-
-# route to delete book from db
-@app.route("/delete_book/<int:book_id>")
-def delete_book(book_id):
-    booked = Books.query.get_or_404(book_id)
-    db.session.delete(booked)
-    db.session.commit()
-    return redirect(url_for("books"))
+# route to render the admin page
+@app.route("/admin")
+def admin():
+    users = list(Users.query.order_by(Users.f_name).all())
+    return render_template("admin.html", users=users)
