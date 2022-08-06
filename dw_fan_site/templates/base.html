@@ -23,16 +23,26 @@
               <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('books') }}">Library</a></li>
-                <li>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
-            {% if session.name %}
+        {% if session.admin %}
                 <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
-                <li><a href="{{ url_for('profile', usernameIn=session['name']) }}">Profile</a></li>
+                <li>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
+                <li><a href="{{ url_for('admin') }}">admin</a></li>
+                <li>|</li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-            {% else %}
+                <li>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
+        {% elif session.name %}
+                <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
+                <li>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
+                <li><a href="{{ url_for('profile', usernameIn=session['name']) }}">Profile</a></li>
+                <li>|</li>
+                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+        {% else %}
+                <li>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
                 <li><a href="{{ url_for('sign_up') }}">Sign-Up</a></li>
                 <li>|</li>
                 <li><a href="{{ url_for('login') }}">login</a></li>
-            {% endif %}
+        {% endif %}
+       
               </ul>
             </div>
         </nav>
@@ -41,9 +51,19 @@
         <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('books') }}">Library</a></li>
+        {% if session.admin %}
+            <li><a href="{{ url_for('admin') }}">admin</a></li>
             <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
+        {% elif session.name %}
+            <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
+            <li><a href="{{ url_for('profile', usernameIn=session['name']) }}">Profile</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+        {% else %}
             <li><a href="{{ url_for('sign_up') }}">Sign-Up</a></li>
             <li><a href="{{ url_for('login') }}">login</a></li>
+        {% endif %}
         </ul>
     </header>
 
