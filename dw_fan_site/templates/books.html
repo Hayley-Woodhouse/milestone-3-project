@@ -23,8 +23,17 @@
         {% endif %}
       </div>
   </div>
+    {% if session.name %}
+    <div class="row col s12">
+      <input class="black-text white" type="text" id="comment_box" placeholder="Enter comment">
+        <button class="light-blue darked-2 white-text" id="post">Post</button>
+        <ul id="unordered">
+         
+      </ul>
+    </div>
+    {% endif %}
   {% endfor %}
 </div>
-  
+
 
 {% endblock %}
