@@ -145,11 +145,14 @@ The opening page has a description about the site, its goals, and its available 
 ![home-page-mod](assets/images-readme/mob_welcome_wire.png)\
 *compressed from 43.6 KB to 12.8 KB via [TinyPNG](https://tinypng.com/)*
 
+
 ![home-page-tablet](assets/images-readme/tablet_welcome_wire.png)\
 *compressed from 42.8 KB to 14.8 KB via [TinyPNG](https://tinypng.com/)*
 
+
 ![home-page-desk](assets/images-readme/desk_welcome_wire.png)\
 *compressed from 44.9 KB to 14.4 KB via [TinyPNG](https://tinypng.com/)*
+
 
 [Back to top](#contents)
 
@@ -160,11 +163,14 @@ The library page consists of list of book titles, an image of the book and the i
 ![library-page-mod](assets/images-readme/mob_books_wire.png)\
 *compressed from 42.2 KB to 12.5 KB via [TinyPNG](https://tinypng.com/)*
 
+
 ![library-page-tablet](assets/images-readme/tablet_books_wire.png)\
 *compressed from 52.4 KB to 17.6 KB via [TinyPNG](https://tinypng.com/)*
 
+
 ![library-page-desk](assets/images-readme/desk_books_wire.png)\
 *compressed from 44.9 KB to 14.4 KB via [TinyPNG](https://tinypng.com/)*
+
 
 [Back to top](#contents)
 
@@ -175,11 +181,14 @@ To register for an account an input form for personal information is provided. T
 ![sign-up-page-mod](assets/images-readme/mob_signup_wire.png)\
 *compressed from 40.7 KB to 11.1 KB via [TinyPNG](https://tinypng.com/)*
 
+
 ![sign-up-page-tablet](assets/images-readme/tablet_signup_wire.png)\
 *compressed from 41.4 KB to 13.5 KB via [TinyPNG](https://tinypng.com/)*
 
+
 ![sign-up-page-desk](assets/images-readme/desk_signup_wire.png)\
 *compressed from 47.6 KB to 15.6 KB via [TinyPNG](https://tinypng.com/)*
+
 
 [Back to top](#contents)
 
@@ -190,11 +199,14 @@ The format for this is like the sign-up page for familiarity. The user will use 
 ![login-page-mod](assets/images-readme/mob_login_wire.png)\
 *compressed from 40.7 KB to 11.6 KB via [TinyPNG](https://tinypng.com/)*
 
+
 ![login-page-tablet](assets/images-readme/tablet_login_wire.png)\
 *compressed from 41.9 KB to 13.9 KB via [TinyPNG](https://tinypng.com/)*
 
+
 ![login-page-desk](assets/images-readme/desk_login_wire.png)\
 *compressed from 47.4 KB to 16.1 KB via [TinyPNG](https://tinypng.com/)*
+
 
 [Back to top](#contents)
 
@@ -233,14 +245,18 @@ When using the [materialize](https://materializecss.com/) design services the co
 ![materialize blue colour](assets/images-readme/blue_colour_wire.png)\
 *compressed from 4.3 KB to 977 B via [TinyPNG](https://tinypng.com/)*
 
+
 ![materialize dark orange colour](assets/images-readme/dorange_colour_wire.png)\
 *compressed from 4.3 KB to 968 B via [TinyPNG](https://tinypng.com/)*
+
 
 ![materialize orange colour](assets/images-readme/orange_colour_wire.png)\
 *compressed from 4.2 KB to 968 B via [TinyPNG](https://tinypng.com/)*
 
+
 ![materialize yellow colour](assets/images-readme/yellow_colour_wire.png)\
 *compressed from 3.9 KB to 968 B via [TinyPNG](https://tinypng.com/)*
+
 
 ![materialize stone colour](assets/images-readme/stone_colour_wire.png)\
 *compressed from 4.6 KB to 1.1 KB via [TinyPNG](https://tinypng.com/)*
@@ -267,11 +283,37 @@ Work sans thin 100, extra light 200, light 300, regular 400.
 
 Home page image downloaded form [swindon advertiser](https://www.swindonadvertiser.co.uk/news/16103604.comedian-david-walliams-talks-book-gangsta-granny/#gallery0)
 
+
 ![home page image](dw_fan_site/static/images/david_walliams.jpg)
+
+
+All book images were sourced from [waterstone](https://www.waterstones.com/books/search/term/david+walliams/page/2#p_8764527)
+
+
+![david walliams books](assets/images-readme/books_1.png)
+
+
+![david walliams books](assets/images-readme/books_2.png)
+
+
+![david walliams books](assets/images-readme/books_3.png)
+
+
+![david walliams books](assets/images-readme/books_4.png)
+
+
+![david walliams books](assets/images-readme/books_5.png)
+
+
+![david walliams books](assets/images-readme/books_6.png)
+
+
+![david walliams books](assets/images-readme/books_7.png)
+
 
 [Back to top](#contents)
 
-<!-- update -->
+
 # 7 Database 
 
 postgres was installed locallt to create a database and SQLAlcemy was installed to work with python to add data to tables and query the database.
