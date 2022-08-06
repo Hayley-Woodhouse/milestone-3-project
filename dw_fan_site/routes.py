@@ -132,7 +132,8 @@ def login():
         if personObject:
             # make sure hashed password matches users input 
             if check_password_hash(personObject.password_user, password1):
-                if email_user == "admin":
+                if "admin" == email_user:
+                    session["admin"] = email_user
                     return redirect(url_for("admin"))
                 else:
                     session["name"] = email_user
@@ -160,12 +161,17 @@ def profile(usernameIn):
 def logout():
     # remove user from session cookie
     flash("You have been logged out")
-    session.pop("name")
+    if session.get("name"):
+        session.pop("name")
+    else:
+        session.pop("admin")
     return redirect(url_for("login"))
 
 
 # route to render the admin page
-@app.route("/admin")
+@app.route("/admin", methods=["GET", "POST"])
 def admin():
     users = list(Users.query.order_by(Users.f_name).all())
-    return render_template("admin.html", users=users)
+    if session["admin"]:
+        return render_template("admin.html", users=users)
+    return redirect(url_for("login"))
