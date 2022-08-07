@@ -1,26 +1,22 @@
 from flask import flash, render_template, request, session, redirect, url_for
 from dw_fan_site import app, db
-from dw_fan_site.models import Books, Users
+from dw_fan_site.models import Books, Users, Comment
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
-# You have to set the secret key for sessions to work
-# Make sure you keep this secret
-app.secret_key = 'hayleywoodhouse' 
 
-
-# route to render the home page
+# # route to render the home page
 @app.route("/")
 def home():
     return render_template("home.html")
 
 
 # route to render the books/library page
-@app.route("/books")  
+@app.route("/books", methods=["GET", "POST"])
 def books():
-    # renders books from db on page
+    comment = list(Comment.query.order_by(Comment.id).all())
     books = list(Books.query.order_by(Books.book_name).all())
-    return render_template("books.html", books=books) 
+    return render_template("books.html", books=books, comment=comment) 
 
 
 # route to render the add_book page
@@ -156,6 +152,15 @@ def profile(usernameIn):
     return redirect(url_for("login"))
 
 
+# route to render the admin page
+@app.route("/admin", methods=["GET", "POST"])
+def admin():
+    users = list(Users.query.order_by(Users.f_name).all())
+    if session["admin"]:
+        return render_template("admin.html", users=users)
+    return redirect(url_for("login"))
+
+
 # route to logout of profile page
 @app.route("/logout")
 def logout():
@@ -168,10 +173,25 @@ def logout():
     return redirect(url_for("login"))
 
 
-# route to render the admin page
-@app.route("/admin", methods=["GET", "POST"])
-def admin():
-    users = list(Users.query.order_by(Users.f_name).all())
-    if session["admin"]:
-        return render_template("admin.html", users=users)
-    return redirect(url_for("login"))
+@app.route('/comment', methods=['GET', 'POST'])
+def comment():
+    bookget = Books.query.first()
+    if request.method == "POST":
+       
+        comment = Comment(
+            comment=request.form.get("comment"),
+            id=request.form.get("comment_id"),
+            books_id=bookget.id
+        )
+        db.session.add(comment)
+        db.session.commit()
+    return redirect(url_for('books'))
+
+
+    
+
+
+
+
+
+
