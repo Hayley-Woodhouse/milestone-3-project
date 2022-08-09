@@ -2,6 +2,8 @@ from flask import flash, render_template, request, session, redirect, url_for
 from dw_fan_site import app, db
 from dw_fan_site.models import Books, Users, Comment
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import current_user
 
 
 
@@ -15,8 +17,10 @@ def home():
 @app.route("/books", methods=["GET", "POST"])
 def books():
     comment = list(Comment.query.order_by(Comment.id).all())
-    books = list(Books.query.order_by(Books.book_name).all())
-    return render_template("books.html", books=books, comment=comment) 
+    books = list(Books.query.order_by(Books.id).all())
+    print(session["name"])
+    # user = session["name"]
+    return render_template("books.html", books=books) 
 
 
 # route to render the add_book page
@@ -31,7 +35,7 @@ def add_book():
             illustrator_name=request.form.get("illustrator_name"),
             publication_date=request.form.get("publication_date"),
             synopsis_info=request.form.get("synopsis_info"),
-            id=request.form.get("book_id")
+            id=request.form.get("books.id")
         )
         # pushed to the db
         db.session.add(book)
@@ -133,7 +137,7 @@ def login():
                     return redirect(url_for("admin"))
                 else:
                     session["name"] = email_user
-                    return redirect(url_for("profile", usernameIn=personObject.f_name))
+                    return redirect(url_for("profile"))
             else:
                 # invalid password
                 flash("Incorrect Username and/or Password")
@@ -144,11 +148,11 @@ def login():
 
 
 # route to render the profile page
-@app.route("/profile/<usernameIn>", methods=["GET", "POST"])
-def profile(usernameIn):
-
-    if session.get("name"):
-        return render_template("profile.html", usernameIn=usernameIn)
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
+    users = list(Users.query.order_by(Users.l_name).all())
+    if session["name"]:
+        return render_template("profile.html", users=users)
     return redirect(url_for("login"))
 
 
@@ -172,26 +176,56 @@ def logout():
         session.pop("admin")
     return redirect(url_for("login"))
 
-
-@app.route('/comment', methods=['GET', 'POST'])
-def comment():
-    bookget = Books.query.first()
+# creating user comments
+@app.route("/comment/<int:book_id>", methods=["GET", "POST"])
+def comment(book_id):
+    print("id" + str(book_id))
+    book = Books.query.get_or_404(book_id)
+  
     if request.method == "POST":
        
-        comment = Comment(
+        comment = Comment (
             comment=request.form.get("comment"),
-            id=request.form.get("comment_id"),
-            books_id=bookget.id
+            id=request.form.get("comment.id"), 
+            commenters_id=book_id,
+              
         )
         db.session.add(comment)
         db.session.commit()
-    return redirect(url_for('books'))
-
-
+        return redirect(url_for("books"))
+    return render_template("comment.html", book=book)
     
 
 
 
+# @app.route('/comment', methods=['GET', 'POST'])
+# def comment():
+#     # book = Books.query.get_or_404(book_id)
+#     # get_books=Books.query.get_or_404(book_id),
+#     # get_users=Users.query.get_or_404(user_id),
+#     if request.method == "POST":
+
+        # book_id = request.form['submit_button']
+        # print(book_id)
+        
+
+    #     comment = Comment(
+    #         comment=request.form.get("comment"),
+    #         id=request.form.get("comment_id"),
+    #         books= Books(
+    #             book_name="mark book",
+    #             author_name="rich",
+    #             illustrator_name="rich",
+    #             publication_date=100380,
+    #             synopsis_info="asd",
+    #         )
+    #     )
+
+    #     db.session.add(comment)
+    #     db.session.commit()
+
+    #     usersres = Books.query.filter_by(book_name='mark book').first()
+    #     print(usersres.comment)
 
 
-
+    # return redirect(url_for('books'))
