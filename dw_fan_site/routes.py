@@ -16,11 +16,10 @@ def home():
 # route to render the books/library page
 @app.route("/books", methods=["GET", "POST"])
 def books():
-    comment = list(Comment.query.order_by(Comment.id).all())
+    comments = list(Comment.query.order_by(Comment.books_id).all())
     books = list(Books.query.order_by(Books.id).all())
-    print(session["name"])
-    # user = session["name"]
-    return render_template("books.html", books=books) 
+    users = list(Users.query.order_by(Users.f_name).all())
+    return render_template("books.html", books=books, comments=comments, users=users) 
 
 
 # route to render the add_book page
@@ -84,10 +83,20 @@ def edit_user(user_id):
 # route to delete Users from db
 @app.route("/delete_user/<int:user_id>")
 def delete_user(user_id):
-    Used = User.query.get_or_404(user_id)
-    db.session.delete(booked)
+    used = Users.query.get_or_404(user_id)
+    db.session.delete(used)
     db.session.commit()
     return redirect(url_for("admin"))
+
+
+
+@app.route("/delete_comment/<int:comment_id>")
+def delete_comment(comment_id):
+    commen = Comment.query.get_or_404(comment_id)
+    db.session.delete(commen)
+    db.session.commit()
+    return redirect(url_for("profile"))
+
 
 
 # route to render the sign_page
@@ -150,9 +159,22 @@ def login():
 # route to render the profile page
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
-    users = list(Users.query.order_by(Users.l_name).all())
+    # users = list(Users.query.order_by(Users.id).all())
+
+    # get from database the user
+    cookie_user = session["name"]
+
+    # Users.query.filter_by(email_user=email_user).first()
+    logged_in_user = Users.query.filter_by(email_user=cookie_user).first()
+
+    # sending in comments
+    comments = list(Comment.query.order_by(Comment.books_id).all())
+
+    # sending in books
+    books = list(Books.query.order_by(Books.id).all())
+    
     if session["name"]:
-        return render_template("profile.html", users=users)
+        return render_template("profile.html", users=logged_in_user, comments=comments, books=books)
     return redirect(url_for("login"))
 
 
@@ -179,53 +201,19 @@ def logout():
 # creating user comments
 @app.route("/comment/<int:book_id>", methods=["GET", "POST"])
 def comment(book_id):
-    print("id" + str(book_id))
     book = Books.query.get_or_404(book_id)
-  
+    # get user from login cookie
+    cookie_user = session["name"]
+    # put user data into db
+    logged_in_user = Users.query.filter_by(email_user=cookie_user).first()
     if request.method == "POST":
-       
         comment = Comment (
             comment=request.form.get("comment"),
             id=request.form.get("comment.id"), 
-            commenters_id=book_id,
-              
+            books_id=book_id,
+            users_id=logged_in_user.id
         )
         db.session.add(comment)
         db.session.commit()
         return redirect(url_for("books"))
     return render_template("comment.html", book=book)
-    
-
-
-
-# @app.route('/comment', methods=['GET', 'POST'])
-# def comment():
-#     # book = Books.query.get_or_404(book_id)
-#     # get_books=Books.query.get_or_404(book_id),
-#     # get_users=Users.query.get_or_404(user_id),
-#     if request.method == "POST":
-
-        # book_id = request.form['submit_button']
-        # print(book_id)
-        
-
-    #     comment = Comment(
-    #         comment=request.form.get("comment"),
-    #         id=request.form.get("comment_id"),
-    #         books= Books(
-    #             book_name="mark book",
-    #             author_name="rich",
-    #             illustrator_name="rich",
-    #             publication_date=100380,
-    #             synopsis_info="asd",
-    #         )
-    #     )
-
-    #     db.session.add(comment)
-    #     db.session.commit()
-
-    #     usersres = Books.query.filter_by(book_name='mark book').first()
-    #     print(usersres.comment)
-
-
-    # return redirect(url_for('books'))
