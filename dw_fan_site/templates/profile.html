@@ -1,13 +1,63 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="row">
+<div class="deep-orange lighten-3 profile_background">
+  <div class="row">
     <div class="col s12 m8 offset-m2">
-        <div class="card-panel">
-            <h3 class="center-align light-blue-text text-darken-2">
-                {{ usernameIn }}'s Profile
-            </h3>
-        </div>
+      <div class="card-panel light-blue darken-2">
+        <h2 class="center-align white-text">
+          {{ users.f_name }}'s Profile
+        </h2>
+      </div>
     </div>
-</div>
+  </div>
+  <div class="row">
+    <div class="col s6 m4 l3">
+      <div class="card-panel">
+        <div class="card-content deep-orange-text text-lighten-3">
+          <i class="material-icons large prefix">person</i>
+          <h5 class="black-text">{{ users.f_name }} {{ users.l_name }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+<h4 class="center-align">{{ users.f_name }}'s Comments</h4>
+  <div class="row">
+    {% for comments in comments %}
+    {% if users.id == comments.users.id%} 
+    <div class="col s12 ">
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <div class="card-content">
+            <div class="row">
+              <div class="col s12 center-align">
+                {% for books in books %}
+                  {% if books.id == comments.books.id %}
+                    <p> Book: {{ books.book_name }} </p>
+                  {% endif %}
+                {% endfor %}
+                <p> {{ comments.comment }} </p>
 
+                <a href="{{ url_for('delete_comment', comment_id=comments.id) }}" class="btn-small red">Delete</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+ 
+
+  
+
+
+
+  <div class="row">
+    <div class="col s12 center-align">
+      <img class="profile_image" src="{{ url_for('static', filename='images/all_walliams_images.jpg') }}">
+    </div>
+  </div>
+</div>
 {% endblock %}
