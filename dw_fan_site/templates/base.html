@@ -31,8 +31,6 @@
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                 <li>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
         {% elif session.name %}
-                <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
-                <li>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
                 <li><a href="{{ url_for('profile', usernameIn=session['name']) }}">Profile</a></li>
                 <li>|</li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
