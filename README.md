@@ -320,36 +320,43 @@ postgres was installed locallt to create a database and SQLAlcemy was installed 
 
 The database name dw_fan_site
 
+
+
+![books model image](assets/images-readme/db_mock_up.png)
+
 [Back to top](#contents)
 
 ## 7.1 Tables
 
 ### Books 
 
+The books model creates the table columns for the database. Frome the routes.py the add_book, edit_book and delete_book enables full CRUD operations. 
+From the html pages these operations can be viewed on the add_book(create), books(read), edit_book(update) and books(delete). These are only avalible to the admin user.
+
 The model.py schema 
 ![books model image](assets/images-readme/books_model_readme.png)
 
-Adding books to the database - routes.py
-![add books routes image](assets/images-readme/add_book_db.png)
-
-Editing books in the database - routes.py
-![edit books routes image](assets/images-readme/edit_book_db.png)
-
-Deleting books from the database - routes.py
-![delete books routes image](assets/images-readme/delete_book_db.png)
-
 [Back to top](#contents)
+
 
 ### Users
 
-The model.py schema
-![users model image](assets/images-readme/users_model_readme.png)
+The users model creates the table columns for the database. Frome the routes.py the sign_up, edit_user and delete_user enables CRUD operations. 
+From the html page these operations can be seen on the sign_up page(create),
+profile_html(read), admin.html(update and delete). The edit and delete operations are currently only available to the admin user.
 
-Sign-up new users - routes.py
-![sign up users routes image](assets/images-readme/singup_users_db.png)
+The model.py schema
+![users model image](assets/images-readme/user_model_readme.png)
+
+### Comment
 
 Login - routes.py
-![login routes image](assets/images-readme/login_users_db.png)
+![comment model image](assets/images-readme/comment_model_readme.png)
+
+The books model creates the table columns for the database. From the routes.py
+the comment and delete_comment enables the CRD operations. The update operation is added to the future updates. The html pages for these operations is comment(create), books and profile(read), and profile(delete).
+
+[Back to top](#contents)
 
 <!---update
 
