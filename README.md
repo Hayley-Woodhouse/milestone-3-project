@@ -25,6 +25,23 @@
     * [6.4 Images](#64-images)
 * [7 Database](#7-database)
     * [7.1 Tables](#71-tables)
+        * [7.1.1 Books](#711-books)
+        * [7.1.2 Users](#712-users)
+        * [7.1.3 Comment](#713-comment)
+* [8 Website operations](#8-wesite-operations)
+    * [8.1 Home](#81-home)
+    * [8.2 Library](#82-library)
+    * [8.3 Sign up](#83-sign-up)
+    * [8.4 Login](#84-Login)
+    * [8.5 Admin](#85-admin)
+        * [8.5.1 Edit user](#851-edit-user)
+        * [8.5.2 Add book](#852-add-book)
+        * [8.5.3 Edit book](#853-edit-book)
+    * [8.6 User](#86-user)
+        * [8.6.1 Comment](#861-comment)
+
+
+
 
 
 # 1 Ux design
@@ -322,70 +339,143 @@ The database name dw_fan_site
 
 
 
-![books model image](assets/images-readme/db_mock_up.png)
-
+![books model image](assets/images-readme/db_mock_up.png)\
 [Back to top](#contents)
 
 ## 7.1 Tables
 
-### Books 
+### 7.1.1 Books 
 
 The books model creates the table columns for the database. Frome the routes.py the add_book, edit_book and delete_book enables full CRUD operations. 
 From the html pages these operations can be viewed on the add_book(create), books(read), edit_book(update) and books(delete). These are only avalible to the admin user.
 
 The model.py schema 
-![books model image](assets/images-readme/books_model_readme.png)
-
+![books model image](assets/images-readme/books_model_readme.png)\
 [Back to top](#contents)
 
 
-### Users
+### 7.1.2 Users
 
 The users model creates the table columns for the database. Frome the routes.py the sign_up, edit_user and delete_user enables CRUD operations. 
 From the html page these operations can be seen on the sign_up page(create),
 profile_html(read), admin.html(update and delete). The edit and delete operations are currently only available to the admin user.
 
 The model.py schema
-![users model image](assets/images-readme/user_model_readme.png)
+![users model image](assets/images-readme/user_model_readme.png)\
+[Back to top](#contents)
 
-### Comment
+### 7.1.3 Comment
 
 Login - routes.py
-![comment model image](assets/images-readme/comment_model_readme.png)
-
-The books model creates the table columns for the database. From the routes.py
+![comment model image](assets/images-readme/comment_model_readme.png)\
+The comment model creates the table columns for the database. From the routes.py
 the comment and delete_comment enables the CRD operations. The update operation is added to the future updates. The html pages for these operations is comment(create), books and profile(read), and profile(delete).
 
 [Back to top](#contents)
 
-<!---update
-
+# 8 Website operations
+The following discribes the operations and functions on the webpage.
 
 [Back to top](#contents)
 
-# 7 Testing
+## 8.1 Home page
+
+The homepage is the opening page. It gives the user the information about the site the what the user needs accomplish in order to get full access to its features. 
+
+![home page](assets/images-readme/home_page.png)\
+[Back to top](#contents)
+
+## 8.2 Library
+
+The library page has a list of all books currently in the database. Un-registered users can see comments made by registered users but are prevented from commenting themselves. This is a feature only available to registers users. 
+
+![library page](assets/images-readme/library_page.png)
+
+[Back to top](#contents)
+
+## 8.3 Sign up
+
+The sign-up page is a form with all inputs set to required. The email input will only accept on email on that name to prevent multiple accounts from one user. Once this information is submitted the information will be stored in the database in the table for users.
+
+![sign up page](assets/images-readme/sign_up_page.png)\
+[Back to top](#contents)
+
+## 8.4 Login
+
+The login page will prevent users from accessing their profile page if data is inputted incorrectly. Once this is achieved with the correct information the user will be directed to the their profile page.
+
+![login page](assets/images-readme/login_page.png)\
+[Back to top](#contents)
+
+## 8.5 Admin
+
+The admin page/account has a lot of functionality. The ability to edit and delete users. The admin account can also add, edit, and delete books. These are not available to any other user.
+
+![admin page](assets/images-readme/admin_page.png)\
+[Back to top](#contents)
+
+### 8.5.1 Edit user
+
+The page that renders when editing the user’s informationfrom the admin account. This has the availability to change all fields except passwords. This is a feature for future updates
+
+![edit user info](assets/images-readme/edit_user_page.png)\
+[Back to top](#contents)
+
+### 8.5.2 Add book
+
+Adding a book doesn’t require full input fields and again is only accessable from the admin account.
+
+![add book page](assets/images-readme/add_new_book_page.png)\
+[Back to top](#contents)
+
+### 8.5.3 Edit book
+
+As with adding a book the edit doesn’t require all fields to be entered and is also a feature only available from the admin account.
+
+![edit book page](assets/images-readme/edit_book_page.png)\
+[Back to top](#contents)
+
+## 8.6 User
+
+The user account renders a profile page that displays the users full name and all comments that user has made to books on the library page. From this page the user can delete their comments. The user will remain logged in and can navigate to pages available on the user. The user will need to hit the log out button on the navbar. All previous changes will remain when the user logs in again.
+
+![profile page](assets/images-readme/profile_page.png)\
+[Back to top](#contents)
+
+### 8.6.1 Comment
+
+From clicking the comment button, the user can add a comment to the book on the page. the comment will render at the top of the comments section as well as on the users profile page.
+
+![ library comment page](assets/images-readme/library_comment_page.png)\
+The comment form will render with the name of the book the user is commenting on.
+
+![comment page](assets/images-readme/comment_page.png)\
+[Back to top](#contents)
+
+# 9 Testing
 
 Click the [link](TESTING.md) for testing.
 
 [Back to top](#contents)
 
-# 8 Deployment
+# 10 Deployment
 
- # 9 Technologies used
+ # 11 Technologies used
 - [HTML 5](https://en.wikipedia.org/wiki/HTML5) 
 - [CSS](https://en.wikipedia.org/wiki/CSS)
 - [JS](https://en.wikipedia.org/wiki/JavaScript)
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+- [jinja](https://en.wikipedia.org/wiki/Jinja_(template_engine))
+- [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL)
 - [Balsamiq](https://balsamiq.com/wireframes/desktop/#)
 - [gitpod](https://www.gitpod.io/)
 - [github](https://github.com/Hayley-Woodhouse/Milestone-3-project)
 - [W3 Schools](https://www.w3schools.com/)
 - [Heroku](https://www.heroku.com/)
-- [Mongodb](https://www.mongodb.com/)
 - [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework))
 
 
-# 10 Credits
+# 12 Credits
 
 - [materialize](https://materializecss.com/)
 - [Font awesome](https://fontawesome.com/) was used for all icons.
@@ -395,17 +485,17 @@ Click the [link](TESTING.md) for testing.
 
 [Back to top](#contents)
 
-# 11 Acknowledgements
+# 13 Acknowledgements
 
-This web site was created for the second milestone project for the full stack development diploma with the code instatute and harlow college.
+This web site was created for my third milestone project for the full stack development diploma with the code instatute and harlow college.
 
 With thanks to 
 
-Precious Ljege for the mentor assistants, advice and support.
+My fellow class mates for there support and assistance.
 
 Philip Morris for the tuition and guidence.
 
-Richard and Isla Woodhouse for support and user testing.
+Richard, Isla and Ben Woodhouse for support and user testing.
 
 [Back to top](#contents)
 
