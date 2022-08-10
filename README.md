@@ -1,3 +1,11 @@
+# The David Walliams Fan Site
+
+The David Walliams fan site was created for those that enjoy his books. Here users can view a library of DW books and create an account to post and share comments. Users can recommend and engage on discussion.
+
+The website can be accessed [here.](https://dw-fan-site.herokuapp.com/)
+
+![library-page-mod](assets/images-readme/readme_image.png)
+
 
 # Contents
 * [1 UX Design](#1-ux-design)
