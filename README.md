@@ -39,6 +39,11 @@
         * [8.5.3 Edit book](#853-edit-book)
     * [8.6 User](#86-user)
         * [8.6.1 Comment](#861-comment)
+        * [8.6.2 Website testing information](#8.6.2-website-testing-information)
+    * [9 Testing](#-testing)
+    * [10 Technologies used](#10-technologies-used)
+    * [11 Credits](#-credits)
+    * [12 Acknowledgements](#12-acknowledgements)
 
 
 
@@ -338,7 +343,6 @@ postgres was installed locallt to create a database and SQLAlcemy was installed 
 The database name dw_fan_site
 
 
-
 ![books model image](assets/images-readme/db_mock_up.png)\
 [Back to top](#contents)
 
@@ -350,6 +354,7 @@ The books model creates the table columns for the database. Frome the routes.py 
 From the html pages these operations can be viewed on the add_book(create), books(read), edit_book(update) and books(delete). These are only avalible to the admin user.
 
 The model.py schema 
+
 ![books model image](assets/images-readme/books_model_readme.png)\
 [Back to top](#contents)
 
@@ -361,12 +366,14 @@ From the html page these operations can be seen on the sign_up page(create),
 profile_html(read), admin.html(update and delete). The edit and delete operations are currently only available to the admin user.
 
 The model.py schema
+
 ![users model image](assets/images-readme/user_model_readme.png)\
 [Back to top](#contents)
 
 ### 7.1.3 Comment
 
 Login - routes.py
+
 ![comment model image](assets/images-readme/comment_model_readme.png)\
 The comment model creates the table columns for the database. From the routes.py
 the comment and delete_comment enables the CRD operations. The update operation is added to the future updates. The html pages for these operations is comment(create), books and profile(read), and profile(delete).
@@ -452,15 +459,18 @@ The comment form will render with the name of the book the user is commenting on
 ![comment page](assets/images-readme/comment_page.png)\
 [Back to top](#contents)
 
+# 8.6.2 Website testing information
+
+Click the [link](DATABASE_INFO.md) for testing.
+
 # 9 Testing
 
 Click the [link](TESTING.md) for testing.
 
 [Back to top](#contents)
 
-# 10 Deployment
 
- # 11 Technologies used
+ # 10 Technologies used
 - [HTML 5](https://en.wikipedia.org/wiki/HTML5) 
 - [CSS](https://en.wikipedia.org/wiki/CSS)
 - [JS](https://en.wikipedia.org/wiki/JavaScript)
@@ -475,7 +485,7 @@ Click the [link](TESTING.md) for testing.
 - [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework))
 
 
-# 12 Credits
+# 11 Credits
 
 - [materialize](https://materializecss.com/)
 - [Font awesome](https://fontawesome.com/) was used for all icons.
@@ -485,7 +495,7 @@ Click the [link](TESTING.md) for testing.
 
 [Back to top](#contents)
 
-# 13 Acknowledgements
+# 12 Acknowledgements
 
 This web site was created for my third milestone project for the full stack development diploma with the code instatute and harlow college.
 
